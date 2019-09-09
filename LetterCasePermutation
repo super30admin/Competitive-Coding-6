@@ -1,3 +1,14 @@
+/******************
+LeetCode yes
+Problem no
+Time O(2^n)
+Space O(n) (of recursion stack)
+
+
+
+*******************/
+
+
 class Solution {
     public List<String> letterCasePermutation(String S) {
         
