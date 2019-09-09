@@ -1,0 +1,45 @@
+/*
+LeetCode Yes
+Problem No
+Time nlogn
+space O(n)
+*/
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    
+    public static int meetings(int[][] intervals )
+    {
+        if(intervals.length == 0)
+            return 0;
+        Arrays.sort(intervals , (a,b) -> a[0] - b[0]);
+        
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        queue.add(intervals[0][1]);
+        for(int i =1 ; i<intervals.length;i++)
+        {
+            int minEnd = queue.peek();
+            // Same room can be used hence update the new end time for the room
+            if(intervals[i][0] > minEnd)
+             {
+                 queue.remove();
+                 queue.add(intervals[i][1]);
+             }
+             
+             else
+             {
+                queue.add(intervals[i][1]);
+             }
+                 
+        }
+        
+        return queue.size();
+        
+    }
+	public static void main (String[] args) {
+		int[][] intervals = {{0,30},{5,32},{15,20},{6,9}};
+	    System.out.println(meetings(intervals));
+	}
+}
