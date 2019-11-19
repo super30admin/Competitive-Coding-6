@@ -7,7 +7,7 @@
 
 // Your code here along with comments explaining your approach
 
-public class Sample{
+public class FindDifferentPossibilities{
 	
 	public static void main(String[] args){
 		findDifferentPossibilities(a1b2);
