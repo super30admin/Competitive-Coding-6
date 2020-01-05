@@ -22,7 +22,7 @@ class Solution:
             self.result.append(path)
         else:    
             # logic
-            # if the charcater is number?
+            # is the charcater is number?
             if s[index].isdigit():
                 self.helper(s, index+1, path+s[index])
             # if it is an alphabet!
