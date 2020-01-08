@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-public class MakePossibleStrings {
+public class LetterCasePermutations {
         int count=0; //Optional: To keep track of total number of possibilities
         List<String> result = new ArrayList<>();
         public List<String> makePossibileStrings(String s){
