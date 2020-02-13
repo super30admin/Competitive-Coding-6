@@ -1,4 +1,5 @@
 // 784. Letter Case Permutation
+// S30 Big N Problem #81 {Easy}
 // Space complexity:exponential; O(2^n) where n is the string length (recursive stack)
 // Time complexity:exponential; O(2^n) where n is the string length
 class Solution {
