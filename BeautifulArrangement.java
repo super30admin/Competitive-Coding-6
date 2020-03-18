@@ -1,3 +1,13 @@
+/*
+Time: O(N!) => please let me know if I am wrong here
+Space: O(N)
+Algorithm:
+========
+1. Use visited array of size N+1 to keep track of visited elements so that repetitions aren't done
+2. If an element is already not visited, check if any valid arrangments are possible with element in that position
+3. Recurse until all possible permutations are generated and result is updated
+*/
+
 class Solution {
     int result;
     public int countArrangement(int N) {

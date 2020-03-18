@@ -1,3 +1,13 @@
+/*
+Time: O(1)
+Space: O(N) where N is number of incoming messages
+Algorithm:
+=========
+1. Initialize map of String(message): Integer(timestampLastPrinted) to keep track of statuses 
+2. If message was printed in last 10 seconds, then don't update timestamp and return false
+3. If message was not printed at all or printed before 10 seconds, update timestamp to current and return true
+*/
+
 class Logger {
 
     /** Initialize your data structure here. */
