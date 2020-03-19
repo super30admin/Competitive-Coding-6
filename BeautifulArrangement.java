@@ -1,3 +1,7 @@
+/*
+Time complexity : n!
+Space complexity - O(n)- space to store used numbers in an array
+*/
 class Solution {
     int count;
     List<List<Integer>> res;
@@ -27,3 +31,4 @@ class Solution {
         }
     }
 }
+
