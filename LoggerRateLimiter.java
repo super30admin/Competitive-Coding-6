@@ -1,3 +1,7 @@
+/*
+Space Complexity -O(n) to store all the messages
+Time Complexity- O(1) for shouldPrintMessage. get and put operation in hashmap is O(1)
+*/
 class Logger {
   private Map<String, Integer> msgDict;
 
