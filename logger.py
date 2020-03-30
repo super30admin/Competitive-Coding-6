@@ -1,87 +1,72 @@
-'''
-Time Complexity: O(1) -> to retrieve message
-Space Complexity: O(M) -> M is size of unique messages
-Did this code successfully run on Leetcode : Yes
-Explanation: Use Hashmap of Node -> message to keep track of the messages and use a doubly linked list to keep the
-messages. If the timestamp of the request is 10 seconds of the previous request then return True and move the requested
-node to the front of the list, removing the tail.
-'''
-class Node:
-    def __init__(self, message, timestamp):
-        self.message = message
-        self.timestamp = timestamp
-        self.next = None
-        self.prev = None
+class Solution:
 
+    def minWindow(self, s: str, t: str) -> str:
+        if s == None or t == None:
+            return ""
 
-class Logger:
+        frequency = [0] * 26
+        mark = [0] * 26
 
-    def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        self.hashMap = {}
-        self.head = Node("", 0)
-        self.tail = Node("", 0)
-        self.head.next = self.tail
-        self.tail.prev = self.head
-        self.size = 10
-        self.maxDuration = 10
-
-
-    def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
-        """
-        Returns true if the message should be printed in the given timestamp, otherwise returns false.
-        If this method returns false, the message will not be printed.
-        The timestamp is in seconds granularity.
-        """
-        if message in self.hashMap.keys():
-            temp = self.hashMap[message]
-            if timestamp - temp.timestamp < self.maxDuration:
-                return False
-
-            self.moveHead(temp, timestamp)
+        if s[0].isupper():
+            case = case
         else:
+            case = case
+        case = case
+        for i in range(0, len(t)):
+            ch = (t[i]).lower()
+            frequency[ord(ch) - ord(case)] += 1
+            mark[ord(ch) - ord(case)] = 1
 
-            if len(self.hashMap) >= self.size:
-                self.removeTail
+        unique = 0
+        for i in range(0, len(mark)):
+            if mark[i] == 1:
+                unique += 1
 
-            self.insertFirst(message, timestamp)
+        start = 0
+        end = 0
+        temp = ''
+        res = math.inf
+        result = ''
+        currentFrequency = [0] * 26
 
-        return True
+        current = 0
 
-    def insertFirst(self, message, timestamp):
-        node = Node(message, timestamp)
+        while end < len(s):
 
-        nextNode = self.head.next
+            # print(end)
+            ch = s[end]
+            if mark[ord(ch) - ord(case)] == 1:
+                currentFrequency[ord(ch) - ord(case)] += 1
 
-        self.head.next = node
+            if mark[ord(ch) - ord(case)] == 1 and frequency[ord(ch) - ord(case)] == currentFrequency[ord(ch) - ord(case)]:
+                current += 1
 
-        node.prev = self.head
-        node.next = nextNode
+            while start <= end and current == unique:
 
-        nextNode.prev = node
+                if res > end - start + 1:
+                    res = end - start + 1
+                    result = s[start:end + 1]
 
-        # insert Message
-        self.hashMap[message] = node
+                ch1 = s[start]
+                currentFrequency[ord(ch1) - ord(case)] -= 1
 
-    def removeTail(self):
-        self.tail.prev.next = self.tail.next
-        self.tail.next = self.tail.prev
+                if mark[ord(ch1) - ord(case)] == 1 and frequency[ord(ch1) - ord(case)] > currentFrequency[
+                    ord(ch1) - ord(case)]:
+                    current -= 1
 
-        # delete message
-        del self.hashMap[self.tail.message]
+                start += 1
+            end += 1
 
-    def moveHead(self, node, timestamp):
-        node.timestamp = timestamp
-        node.prev.next = node.next
-        node.next.prev = node.prev
+        if res == math.inf:
+            return ''
+        else:
+            return result
 
-        node.next = self.head.next
-        node.prev = self.head
-        self.head.next = node
-        node.next.prev = node
 
-# Your Logger object will be instantiated and called as such:
-# obj = Logger()
-# param_1 = obj.shouldPrintMessage(timestamp,message)
+
+
+
+
+
+
+
