@@ -1,0 +1,42 @@
+// Time Complexity : O(1)
+// Space Complexity : O(2n) n - max number of message
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+class Logger {
+    class TimedMessage {
+        public int timestamp;
+        public String message;
+
+        public TimedMessage(int timestamp, String message) {
+            this.timestamp = timestamp;
+            this.message = message;
+        }
+    }
+
+    Queue<TimedMessage> queue;
+    Set<String> messages;
+
+    public Logger() {
+        queue = new LinkedList<TimedMessage>();
+        messages = new HashSet<>();
+    }
+
+    public boolean shouldPrintMessage(int timestamp, String message) {
+        /* removes message from queue which are less greater than timestamp -10*/
+        while(!queue.isEmpty() && queue.peek().timestamp <= timestamp - 10) {
+             /* remove from queue and set */
+            String msg = queue.remove().message;
+            messages.remove(msg);
+        }
+        /* if message is already in set means it has occured within last 10 min */
+        if(messages.contains(message)) {
+            return false;
+        } else {
+           /* add to queue and set */
+            queue.offer(new TimedMessage(timestamp, message));
+            messages.add(message);
+            return true;
+        }
+    }
+}
