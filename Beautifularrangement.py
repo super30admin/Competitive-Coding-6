@@ -1,5 +1,5 @@
 # Time Complexity : O(N!) where we have N number of combination where N is number of element
-# Space Complexity : O(N) where we use visisted arrayof size N
+# Space Complexity : O(N) where we use visited array of size N
 
 class Solution:
     def countArrangement(self, N: int) -> int:
