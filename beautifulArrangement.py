@@ -1,5 +1,5 @@
-# Time Complexity : O(p), where p is the number of valid permutations
-# Space Complexity : O(n), where n is the given input N
+# Time Complexity : O(p), where p is the number of valid permutations, worst case O(n!) if all valid.
+# Space Complexity : O(n), array space, where n is the given input N
 # Did this code successfully run on Leetcode : yes
 # Any problem you faced while coding this : no
 
@@ -35,4 +35,4 @@ class Solution(object):
                 self.helper(nums, N, idx + 1)
                 # backtrack
                 nums[i] = False
-                
+
