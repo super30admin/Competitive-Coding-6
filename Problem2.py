@@ -1,5 +1,5 @@
 # Time Complexity : O(1)
-# Space Complexity : O(1) 
+# Space Complexity : O(n) where n is the maximum capacity. 
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 # Your code here along with comments explaining your approach
@@ -35,6 +35,7 @@ class Logger(object):
         node.prev.next = node.next 
         return 
     
+    # Time = O(1) | Space = O(n) where n is the valye of the "capacity".
     def shouldPrintMessage(self,timeStamp, message):
         if message in self.map:
             node = self.map[message] 
