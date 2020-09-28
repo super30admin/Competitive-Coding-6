@@ -1,5 +1,5 @@
     /*  Explanation
-    # Leetcode problem link : https://leetcode.com/problems/palindrome-partitioning/
+    # Leetcode problem link : https://leetcode.com/problems/beautiful-arrangement/
     Time Complexity for operators : o(n^n) .. n is the length of the string
     Extra Space Complexity for operators : o(n) for (List<String> path) without recursive stack
     Did this code successfully run on Leetcode : NA
@@ -10,12 +10,13 @@
                               
             # 1. Backtracking
                     A) Call the backtracking function from main fucntion with initial values.
-                    B) The backtracking function will contains input as string candidates, taregt, path, index.
-                    C) Base case, index >= s.length() then we passed index then return.
-                    F) In the main backtracking for loop(temp = to get the substring), check if it is palindrom and then add element to the list
-                    E) then do backtracking, call backtracking function by passi for index+1.
-                    F) At the end, remove last element from the String.
-                    G) In main function, return final output.
+                    B) The backtracking function will contains input as N, hashset to maintain visited and position.
+                    C) Base case, path.size == N then increase the count.
+                    F) In the main backtracking for loop, check if it is element is already visited in hashset and also if number
+                       is valid in that position by  calling isValidaDivision(i, position) method.
+                    E) then do backtracking, call backtracking function by pass all variables.
+                    F) At the end, remove last element from the list and hashset  also.
+                    G) In main function, return final count.
 
     */  
 
