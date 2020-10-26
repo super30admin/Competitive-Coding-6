@@ -1,0 +1,38 @@
+// brute force => if we check the validation condition after forming all possible permuatations
+// brute force -> time complexity: N*N!  (N! permuataions and checking the validation conditions in all permutations)
+// brute force -> space complexity: N(recursion stack) + N*N! (output space)
+// The solution doesn't requires the creation of list; that will be an unnecessary work; 
+// We just need to keep in not are we able to form permutation;
+// Means are we able to consider each possible element at the each position
+// Backtracking can be easily done through maintaining visited array so we we are not taking same element again
+// Just using visited array we are able to form the valid permutations
+// Time complexity: N!
+// space complexity: n
+class Solution {
+    int n = 0;
+    public int countArrangement(int N) {
+        if(N == 1) return 1;
+        helper(N, new boolean[N+1], 1);
+        
+        return n;
+    }
+    
+    public void helper(int N, boolean[] visited, int index){
+        if(index > N){
+            n++;
+            return;
+        }
+        
+        for(int i = 1; i <= N; i++){
+            
+            if(visited[i] == true) continue;
+            if(i % index == 0 || index % i == 0){
+             //   temp.add(i);
+                visited[i] = true;
+                helper(N, visited, index+1);
+            //    temp.remove(temp.size()-1);
+                visited[i] = false;
+            }
+        }
+    }
+}
