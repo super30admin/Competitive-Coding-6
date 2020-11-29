@@ -1,4 +1,4 @@
-#Time Complexity : O(p) where p is the number of permutations which are valid
+#Time Complexity : Exponential
 #Space Complexity : O(n) where n is the given length
 #Did this code successfully run on Leetcode : Yes
 
