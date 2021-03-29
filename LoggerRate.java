@@ -1,5 +1,13 @@
 // Time Complexity : O(1) Just for the lookup of the particular incoming message
 // Space Complexity : O(n) for storing all the messages,timestamp in hashmap
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+
+// Used Hashing to store the timestamp of respective message string
+// the next timestamp will be compared with the previously stored timestamp of respective message from dictionary
 
 class Logger {
     HashMap<String,Integer> map;
