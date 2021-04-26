@@ -33,13 +33,11 @@ public class BeautifulArrangement {
         //choose
         visited[i] = true;
         //backtrack
-        backtrack(n, visited, i + 1);
+        backtrack(n, visited, index + 1);
         //not choose
         visited[i] = false;
       }
     }
-
-
   }
 
   public static void main(String[] args) {
