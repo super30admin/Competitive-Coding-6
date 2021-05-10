@@ -27,3 +27,15 @@ Run time is printed as standard output
 Command to run the task1 file.
 
 python task2.py 'input_file_path' 'output_file_path'
+
+## Task3
+
+Here we are receiving the pageviews for each product_name by country and city.
+
+On a single day, with the help of this data, we could predict traffic on the websites for the upcoming days by using time series algorithms.
+
+We could predict the website traffic for an ecommerce website on a sales day or an festival.
+
+We could also alert any product owners by prediciting whether there might be a sharp reduction in the page views to their websites.
+
+We could also alert product owners if there is a sharp spike in page_views on their websites due to any malicious activities.
