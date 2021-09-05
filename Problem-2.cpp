@@ -1,4 +1,7 @@
-
+// Time Complexity : O(Exponential)
+// Space Complexity : O(Exponential)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
 class Solution {
 public:
     int count=0;
