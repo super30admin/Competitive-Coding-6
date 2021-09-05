@@ -76,3 +76,43 @@ public:
  * Logger* obj = new Logger();
  * bool param_1 = obj->shouldPrintMessage(timestamp,message);
  */
+
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Where N is the number of blocks provided. 
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+class Logger {
+public:
+    /** Initialize your data structure here. */
+    map <string, int> m;
+    int time;
+    Logger() {
+        time=10;
+    }
+    
+    /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
+        If this method returns false, the message will not be printed.
+        The timestamp is in seconds granularity. */
+    bool shouldPrintMessage(int timestamp, string message) {
+        if(m.find(message)==m.end()){
+            m.insert({message,timestamp});
+            return true;
+        }
+        else{
+            if(m.find(message)!=m.end()){
+                if(timestamp - m[message]>=time){
+                    m[message] = timestamp;
+                    return true;   
+                }
+            }
+        }
+        return false;
+    }
+};
+
+/**
+ * Your Logger object will be instantiated and called as such:
+ * Logger* obj = new Logger();
+ * bool param_1 = obj->shouldPrintMessage(timestamp,message);
+ */
