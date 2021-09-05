@@ -1,5 +1,6 @@
 // Time Complexity : O(Exponential)
 // Space Complexity : O(Exponential)
+//The set data structure is not time efficient try to use vector or array if possible.
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 class Solution {
