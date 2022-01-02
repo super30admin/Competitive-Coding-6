@@ -1,3 +1,8 @@
+// Time Complexity : O(1): constant
+// Space Complexity : O(n): n = number of messages in map
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
 const map = {};
 const logger = (timeStamp, message) => {
   if (map[message] === undefined) {
