@@ -1,4 +1,4 @@
-# T.C. - O(n) n is the of messages
+# T.C. - O(1) 
 # S.C. -O(n) n is the number of messages
 class Logger:
 
