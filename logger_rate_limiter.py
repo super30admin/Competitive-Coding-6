@@ -1,6 +1,6 @@
 # Time Complexity : O(1) where n is total numbers
 # Space Complexity : O(N*L) where L is avg size of the log message and N is number of unique log messages received
-# Did this code successfully run on Leetcode : No (Time Limit Exceeded)
+# Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 
 class Logger:
