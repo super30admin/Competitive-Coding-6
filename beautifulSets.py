@@ -1,6 +1,6 @@
 """
 Approach: Recursion with BackTracking
-TC O(k) for k valid permutations we will do
+TC O(k) for k valid permutations we will do and O(n) to generate list l
 SC O(1) No extra space was used for visited array, O(n) maximum depth of recursion stack
 """
 
