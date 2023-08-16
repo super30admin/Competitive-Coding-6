@@ -1,4 +1,3 @@
-
 class Solution {
 
 //    Solution 1: beautiful-arrangement
