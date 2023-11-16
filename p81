@@ -1,0 +1,28 @@
+class Logger {
+
+    private Map<String, Integer> ratesMap;
+
+  public Logger() 
+  {
+    ratesMap = new HashMap<>();
+  }
+
+  public boolean shouldPrintMessage(int timestamp, String message) 
+  {
+    Integer integer = ratesMap.get(message);
+    if (integer == null || integer + 10 <= timestamp) 
+    {
+      ratesMap.put(message, timestamp);
+      return true;
+    }
+
+    return false;
+        
+    }
+}
+
+/**
+ * Your Logger object will be instantiated and called as such:
+ * Logger obj = new Logger();
+ * boolean param_1 = obj.shouldPrintMessage(timestamp,message);
+ */
