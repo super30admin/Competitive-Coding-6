@@ -1,0 +1,19 @@
+class Solution:
+    def countArrangement(self, n: int) -> int:
+        def backtrack(position):
+            nonlocal count
+            if position == n + 1:
+                count += 1
+                return
+            for i in range(1, n + 1):
+                if not used[i] and (i % position == 0 or position % i == 0):
+                    used[i] = True
+                    backtrack(position + 1)
+                    used[i] = False
+
+
+
+        count = 0
+        used = [False] * (n+1)
+        backtrack(1)
+        return count
