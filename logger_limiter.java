@@ -1,7 +1,7 @@
 
 
 //TimeComplexity: O(1)
-//SpaceComplexity: O(1)
+//SpaceComplexity: O(N)
 import java.util.*;
 class Logger {
   HashMap<String, Integer> map = new HashMap<>();
