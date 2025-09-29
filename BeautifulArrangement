@@ -1,0 +1,39 @@
+// Time Complexity: O(n!)
+// Space Complexity: O(n)
+
+// Create the arr with elements from 1 to n and a boolean array to keep track of elements used while creating permutations
+// if an element has not been chosen, check if the 2 conditions for creating the permutation satifies, if not skip that permutation
+// if it satisfies add element to the list till list contains all elements add it to count
+
+class Solution {
+    int count;
+    public int countArrangement(int n) {
+        count = 0;
+        boolean[] chosen = new boolean[n];
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i++) {
+            arr[i] = i + 1;
+        }
+        permute(arr, chosen, new ArrayList<>());
+        return count;
+    }
+
+    private void permute(int[] arr, boolean[] chosen, List<Integer> list) {
+        if(list.size() == arr.length) {
+            count++;
+            return;
+        }
+
+        for(int i = 0; i < arr.length; i++) {
+            if(!chosen[i]) { // if element has not been chosen
+                if(arr[i] % (list.size() + 1) == 0 || (list.size() + 1) % arr[i] == 0) { // condition for creating the permutation
+                    list.add(arr[i]);
+                    chosen[i] = true;
+                    permute(arr, chosen, list);
+                    chosen[i] = false;
+                    list.remove(list.size()-1);
+                } 
+            }
+        }
+    }
+}
