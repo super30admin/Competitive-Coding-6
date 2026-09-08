@@ -1,0 +1,37 @@
+//Time Complexity: O(n!)
+//Space Complexity: O(n)
+class Solution {
+    int count;
+    boolean[] visited;
+    public int countArrangement(int n) {
+        this.visited = new boolean[n+1];
+        helper(1, n);
+        return count;
+    }
+
+    private void helper(int idx, int n)
+    {
+        //base case
+        if(idx > n)
+        {
+            count++;
+            return;
+        }
+
+        //logic
+        for(int i = 1; i <= n; i++)
+        {
+            if(!visited[i] && (idx % i == 0 || i % idx == 0))
+            {
+                //action
+                visited[i] = true;
+
+                //recurse
+                helper(idx+1, n);
+
+                //backtrack
+                visited[i] = false;
+            }
+        }
+    }
+}
